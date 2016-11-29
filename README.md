@@ -1,2 +1,2 @@
 # stl
-Common idioms for using the stl.
+Common idioms for stl programming.
