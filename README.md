@@ -2,7 +2,7 @@
 Common idioms for stl programming.
 
 ## seqstream.h
-Treat a sequence of streams as a single stream (currently supports writes):
+Treat a sequence of streams as a single stream (currently supports reads):
 ```
 seqstream ss;
 
