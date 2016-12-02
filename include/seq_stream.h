@@ -1,14 +1,14 @@
-#ifndef STL_INCLUDE_SEQBUF_H
-#define STL_INCLUDE_SEQBUF_H
+#ifndef STL_INCLUDE_SEQ_STREAM_H
+#define STL_INCLUDE_SEQ_STREAM_H
 
 #include <streambuf>
 #include <queue>
 
 namespace stl {
 
-class seqbuf : public std::streambuf {
+class seq_buf : public std::streambuf {
   public:
-    seqbuf() : std::streambuf() { }
+    seq_buf() : std::streambuf() { }
 
     void push(std::streambuf* buf) {
       bufs_.push(buf);
@@ -42,6 +42,18 @@ class seqbuf : public std::streambuf {
 
   private:
     std::queue<std::streambuf*> bufs_;          
+};
+
+class seq_stream : public std::iostream {
+  public:
+    seq_stream() : std::iostream(&buf_) { }
+
+    void push(std::iostream& ios) {
+      buf_.push(ios.rdbuf());
+    }
+
+  private:
+    seq_buf buf_;
 };
 
 } // namespace stl
