@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "include/seqstream.h"
+#include "include/seq_stream.h"
 
 #include <sstream>
 #include <vector>
@@ -7,17 +7,17 @@
 using namespace std;
 using namespace stl;
 
-// Reading from no streams using a seqstream
-TEST(seqstream, read_0) {
-  seqstream ss;
+// Reading from no streams using a seq_stream
+TEST(seq_stream, read_0) {
+  seq_stream ss;
   int i;
 
   ss >> i;
   EXPECT_TRUE(ss.eof());
 }
-// Reading from one stream using a seqstream
-TEST(seqstream, read_1) {
-  seqstream ss;
+// Reading from one stream using a seq_stream
+TEST(seq_stream, read_1) {
+  seq_stream ss;
   stringstream ss1("0 1 2 3 4");
   ss.push(ss1);
 
@@ -32,9 +32,9 @@ TEST(seqstream, read_1) {
     EXPECT_EQ(i, is[i]);
   }
 }
-// Reading from multiple stream using a seqstream
-TEST(seqstream, read_2) {
-  seqstream ss;
+// Reading from multiple stream using a seq_stream
+TEST(seq_stream, read_2) {
+  seq_stream ss;
   stringstream ss1("0 1 2 3 4");
   ss.push(ss1);
   stringstream ss2("5 6 7 8 9");
