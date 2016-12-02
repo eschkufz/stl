@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "include/seqstream.h"
 
-#include <fstream>
+#include <sstream>
 #include <vector>
 
 using namespace std;
@@ -18,8 +18,8 @@ TEST(seqstream, read_0) {
 // Reading from one stream using a seqstream
 TEST(seqstream, read_1) {
   seqstream ss;
-  fstream fs("data/int_1.dat");
-  ss.push(fs);
+  stringstream ss1("0 1 2 3 4");
+  ss.push(ss1);
 
   int i;
   vector<int> is;
@@ -35,10 +35,10 @@ TEST(seqstream, read_1) {
 // Reading from multiple stream using a seqstream
 TEST(seqstream, read_2) {
   seqstream ss;
-  fstream fs1("data/int_1.dat");
-  ss.push(fs1);
-  fstream fs2("data/int_2.dat");
-  ss.push(fs2);
+  stringstream ss1("0 1 2 3 4");
+  ss.push(ss1);
+  stringstream ss2("5 6 7 8 9");
+  ss.push(ss2);
 
   int i;
   vector<int> is;
