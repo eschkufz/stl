@@ -1,10 +1,23 @@
 # stl
 Common idioms for stl programming.
 
-## seqstream.h
-Treat a sequence of streams as a single stream (currently supports reads):
+## comment_stream.h
+Ignore comments from an underlying istream:
+``` c++
+stringstream ss;
+ss << "# This is a comment" << endl;
+ss << "10";
+comment_stream cs(ss);
+
+int x;
+cs >> x;
+assert(x == 10);
 ```
-seqstream ss;
+
+## seq_stream.h
+Treat a sequence of streams as a single stream (currently supports reads):
+``` c++
+seq_stream ss;
 
 stringstream s1("Hello world");
 ss.push(s1);
