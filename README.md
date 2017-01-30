@@ -1,6 +1,17 @@
 # stl
 Common idioms for stl programming.
 
+## buf_stream.h
+Treat an in-memory buffer as a stream without copying:
+``` c++
+const char* c = "Hello world!";
+buf_stream bs(c, c+12);
+
+string s;
+cin >> s;
+assert (s == "Hello");
+```
+
 ## comment_stream.h
 Ignore comments from an underlying istream:
 ``` c++
@@ -30,3 +41,4 @@ while (ss >> x) {
   cout << x << endl;
 }
 ```
+

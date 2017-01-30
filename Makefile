@@ -14,6 +14,7 @@ GTEST_TARGET=bin/gtest
 
 ### Regression test binaries
 TEST_OBJ=\
+	test/buf_stream.o\
 	test/comment_stream.o\
 	test/seq_stream.o
 
