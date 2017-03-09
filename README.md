@@ -25,6 +25,19 @@ cs >> x;
 assert(x == 10);
 ```
 
+## indent_stream.h
+Embed tab-stops in an underlying ostream:
+``` c++
+stringstream ss;
+indent_stream is(ss);
+
+ss << "Hello" << endl;
+ss.tab();
+ss << "World" << endl;
+ss << "!" << endl;
+ss << untab();
+```
+
 ## seq_stream.h
 Treat a sequence of streams as a single stream (currently supports reads):
 ``` c++

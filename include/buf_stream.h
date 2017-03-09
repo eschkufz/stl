@@ -1,6 +1,8 @@
 #ifndef STL_INCLUDE_BUF_STREAM_H
 #define STL_INCLUDE_BUF_STREAM_H
 
+#include <streambuf>
+
 namespace stl {
 
 class buf_buf : public std::streambuf {
