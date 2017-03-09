@@ -35,7 +35,7 @@ ss << "Hello" << endl;
 ss.tab();
 ss << "World" << endl;
 ss << "!" << endl;
-ss << untab();
+ss.untab();
 ```
 
 ## seq_stream.h
