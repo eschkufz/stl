@@ -1,9 +1,10 @@
 #ifndef STL_INCLUDE_SUB_STREAM_H
 #define STL_INCLUDE_SUB_STREAM_H
 
-#include <unordered_map>
+#include <iostream>
 #include <streambuf>
 #include <string>
+#include <unordered_map>
 
 namespace stl {
 
