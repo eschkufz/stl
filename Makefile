@@ -17,7 +17,8 @@ TEST_OBJ=\
 	test/buf_stream.o\
 	test/comment_stream.o\
 	test/indent_stream.o\
-	test/seq_stream.o
+	test/seq_stream.o\
+	test/sub_stream.o
 
 ### Top-level commands
 all: ${GTEST_TARGET}
