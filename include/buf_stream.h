@@ -8,7 +8,9 @@ namespace stl {
 
 class buf_buf : public std::streambuf {
   public:
-    buf_buf(const char* begin, const char* end) : begin_(begin), end_(end), p_(begin) { }
+    buf_buf(const char* begin, const char* end) : begin_(begin), end_(end), p_(begin) { 
+      (void) begin_;
+    }
 
   protected:
     int_type underflow() override {
